@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introdução ao HTML</title>
+    </head>
+    <body>
+       <h1>Dados cadastro</h1>
+
+       <form method="get"
+        action="validar.html">
+        <label for="nome">Nome:</label>
+        <input type="text" name="Nome_pessoa" id="nome" placeholder="Nome da pessoa" value="Felipe">
+        <br>
+        <label for="endereco">Endereco:</label>
+        <input type="text" name="endereco_pessoa" id="endereco" placeholder="Endereco" value="Rua, número, complemento">
+       
+                       <br>
+
+        <input type="radio" name="genero" id="masculino" value="M">
+        <label for="masculino">Masculino</label>
+        <br>
+        <input type="radio" name="genero" id="feminino" value="F">
+        <label for="feminino">Feminino</label>
+        <br>
+        <input type="radio" name="genero" id="naobinario" value="NB">
+        <label for="naobinario">Não binário</label>
+        <br>
+
+        <label for="usuario">Usuário</label>
+        <input type="text" name="usuario" id="usuario">
+        <br>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha">
+        
+        <input type="submit" name="cadastro" value="Cadastrar">
+
+    </form>
+    </body>
+
+</html>
