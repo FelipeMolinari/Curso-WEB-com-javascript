@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicios HTML</title>
+</head>
+
+<body>
+    <h1 id="inicio">Exercicios HTML</h1>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> |
+        <a href="exercicios/textos.html">01 - Text</a> |
+        <a href="exercicios/texto2.html">02 - Text2</a> |
+        <a href="exercicios/listas.html">03 - Listas</a> |
+        <a href="exercicios/links.html">04 - Links</a> |
+        <a href="exercicios/table.html">05 - Tabela</a> |
+        <a href="exercicios/form/form.html">06 - Formulário</a> |
+
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso Web moderno.
+    </footer>
+
+    <!-- DUVIDA CRUEL .... -->
+    <div style="position:absolute; top:2000px">
+        <h1 id="parteSecreta">Entrou na parte Secreta da página</h1>
+        <h2>Mas aqui não tem nada... ;c</h2>
+        <a id="botVoltar">Voltar p o inicio</a>
+    </div>
+
+    <script>
+
+        document.getElementById("botVoltar").onclick = elemento =>{
+            
+            location.hash = ''
+            location.hash = "#inicio"
+        }
+        
+        document.querySelectorAll("a").forEach(link => {
+            const conteudo = document.getElementById("conteudo")
+            link.onclick = event => {
+                event.preventDefault()
+                fetch(link.href)
+                    .then(resp => resp.text()).then(html => conteudo.innerHTML = html)
+
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
