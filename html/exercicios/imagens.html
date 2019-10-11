@@ -1,0 +1,97 @@
+
+<div id="ws-slider">
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"  alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da cidade por Tarso Bessa">
+    </p>
+    <p>
+            <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"  alt="Intro Cod3r"
+            width="513" height="342"
+            title="Muro da cidade por Tarso Bessa">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro"
+        height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="avatar" height="50" align="left" >
+        UASHUASHUaiuhsuasHUSAUH uHASUHSAU HASu hau lmkzamk
+        asjisajhisaijsajisajisajisaij i sajij asij si jsaij 
+        7asplsaplsap l pal spal psl apl pajs iuah 
+        aos jkk.a UAHSUAHSUv koaksokas kuahsu h
+    </p>
+    
+    <p>
+        <picture>
+            <source media="(min-width: 600px)" srcset="http://files.cod3r.com.br/curso-web/logo-larga.png">
+    
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo cod3r">
+        </picture>
+    </p>
+    <p class="cidade"></p>
+</div>
+<style>
+
+    div{
+        width: 1000px
+    }
+    p{
+        position: absolute;
+        display: none
+    }
+
+    .circular{
+        width: 513px;
+        background-color: #444
+    }
+
+    .texto{
+        width: 400px
+    }
+    .texto img{
+        margin-right: 10px
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(http://files.cod3r.com.br/curso-web/imagem4.jpg);
+        background-size: 200%
+    }
+
+</style>
+
+<script>
+
+    let htmlCollection = document.getElementsByTagName("p")
+    var imagens = [...htmlCollection];
+    console.log(imagens)
+    let limits = document.getElementById("ws-slider")
+    console.log(limits)
+    var x = 0
+    setInterval("anim(imagens[0], functCallback)",3)
+     function anim(imagem, callback){
+         x++
+         const img = imagem
+         img.style.position = "fixed"
+         img.style.display = "block"
+         img.style.left = x +'px'
+         if(x>innerWidth){
+             img.style.display = "none"
+             x=0
+             return callback()
+         }
+     }
+     const functCallback = ()=>{
+        const vaiPraUltimo = imagens.shift()
+        imagens.push(vaiPraUltimo)
+        console.log(imagens)
+     }
+
+
+</script>

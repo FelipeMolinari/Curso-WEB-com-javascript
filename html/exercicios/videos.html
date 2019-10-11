@@ -1,0 +1,62 @@
+<h1>Vídeos</h1>
+
+<video id="meuVideo" height="450" width="800" autoplay controls constrolsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tage de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div>
+    </div>
+</div>
+
+<div>
+    <button wm-play="meuVideo" onclick="playVideo()">Play</button>
+    <button wm-pause="meuVideo" onclick="pauseVideo()">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444444;
+        margin: 5px
+    }
+
+    .progresso>div {
+        height: 100%;
+        background-color: red;
+        width: 0%;
+    }
+</style>
+
+<script>
+    const video = document.getElementById("meuVideo")
+
+
+    var barraProgresso = document.querySelector("[wm-progresso=meuVideo] > div");
+
+    video.onloadedmetadata = function () {
+
+        setInterval("atualizaBarra(video.duration)", 15)
+    }
+
+    video.onloadedmetadata()
+
+    function atualizaBarra(tempoTotal) {
+        let tempoDecorrido = video.currentTime
+        let timePercent = (tempoDecorrido/tempoTotal)*100
+        barraProgresso.style.width = timePercent + '%'
+
+    }
+    function playVideo() {
+        video.play()
+    }
+
+    function pauseVideo() {
+        video.pause()
+    }
+
+
+
+</script>

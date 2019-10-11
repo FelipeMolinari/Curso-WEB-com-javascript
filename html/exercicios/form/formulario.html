@@ -1,0 +1,52 @@
+<h1>Form</h1>
+
+<form method="POST">
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin">Admin
+        <input type="radio" name="tipo" value="reg">Regular
+        <input type="radio" name="tipo" value="prof">Professor
+    </div>
+
+    <div>
+        <input type="checkbox" name="Ativo">Ativo
+    </div>
+
+
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="AC">Acre</option>
+        <option value="MG">Minas</option>
+        <option value="SP">São Paulo</option>
+    </select>
+
+    <select name="interesses" multiple size="5">
+            <option value="javascript">Javascript</option>
+            <option value="php">php</option>
+            <option value="html">Html</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+
+    </select>
+    <button formaction="http://localhost:3003/cadastros">Submeter</button>
+    <button formaction="http://localhost:3003/cadastros/3">Alterar</button>
+    
+</form>
+
+<style>
+
+    input,
+    textarea,
+    select{
+        display: block;
+        margin-bottom: 10px
+    }
+    input[type=radio],
+    input[type=checkbox]{
+        display: inline;
+    }
+
+</style>
