@@ -6,6 +6,25 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://specificity.keegan.st/ */
+        /*
+        1. Inline
+        2. ID
+        3. Classes, Pseudo-Classe, atributo
+        4. Elemento. Pseudo-Elemento 
+         */
+
+
+         body{
+             font-size: 40px
+         }
+
+         div{ background-color: turquoise; color: wheat}/* Nível 1 de especificidade*/
+         div.estilo{ background-color: yellow; color: teal}/* Nível 11 de especificidade*/
+         div[wm-cor]{background-color: springgreen; color: slategray}/* Nível 11 de especificidade*/ 
+         div#unico1{background-color: brown; color: chartreuse}/* Nível 101 de especificidade*/
+         #unico1, #unico2{background-color: sienna; color: whitesmoke}/* Nível 100 de especificidade*/
+         div:hover, #unico1:hover{background-color: darkcyan; color: white}/* Nivel 10 de especificidade e 110*/
+
     </style>
 </head>
 

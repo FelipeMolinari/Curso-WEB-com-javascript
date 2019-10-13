@@ -6,6 +6,32 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* Em linhas gerais
+
+            1. Regra com important
+            2. Seletores inline
+            3. Ultima regra processada (empate)         
+            */
+        .observacao{
+            color: white;
+            border: 2px dashed black;
+            background-color: tomato;
+            padding: 5px !important;
+            font-size: 40px
+        }
+        p{
+            color: aquamarine
+        }
+        /* Tem   prioridade */
+        p.observacao{ 
+
+            color: white;
+            border: 2px dashed black;
+            background: linear-gradient(to right, red,yellow);
+            padding: 18px;
+            font-size: 40px
+        }
+        
     </style>
 </head>
 
