@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cálculo - validação com BS</title>
+
+    <link rel="stylesheet" href="../bootstrapdist/css/bootstrap.css">
+    <script src="calculaImc.js"></script>
+
+    <style>
+      
+
+        body {
+            margin: 20px;
+        }
+
+        .divForm {
+            border: 2px solid coral;
+            padding: 20px;
+            width: 30%;
+            display: inline-block;
+            text-align: center;
+            border-radius: 4px
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="divForm">
+        <form name="dados">
+            <div id="grupo1" class="form-group ">
+                <label for="valor1">Valor 1</label>
+                <input type="number" name="valor1" id="valor1" value="" class="form-control">
+            </div>
+
+            <div id="grupo2" class="form-group ">
+                <label for="valor2">Valor 2</label>
+                <input type="number" name="valor2" id="valor2" value="" class="form-control">
+            </div>
+
+            <div id="resultado" class="form-group ">
+                <label for="resultado">Resultado</label>
+                <input type="number" name="resultado" id="resultado" value="" class="form-control" disabled>
+            </div>
+
+            <input type="button" value="Calcular" style="background: coral;
+                  border: coral;" onclick="calcular()" class="btn btn-primary">
+
+
+            <input type="reset" name="" value="Limpar" style="background:mediumaquamarine;
+                  border: mediumaquamarine; color: white;" class="btn btn-warning">
+
+        </form>
+    </div>
+
+</body>
+
+</html>
