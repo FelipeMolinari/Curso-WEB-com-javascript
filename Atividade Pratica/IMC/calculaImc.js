@@ -23,14 +23,23 @@ function calcular() {
     let peso = document.dados.valor1;
     let altura = document.dados.valor2;
 
-    console.log({peso,altura})
     if (validar(peso) && validar(altura)) {
         const alturaEmCm =parseFloat(altura.value)/100
         let res = parseFloat(peso.value)/((alturaEmCm)*(alturaEmCm))
         document.dados.resultado.value = res;
         mudaCorTabela(res)
+        apresentaPesoIdeal(altura)
     }
 }
+function apresentaPesoIdeal(altura){
+    const contentPesoIdeal = document.getElementById("pesoIdeal")
+    const alturaEmCm =parseFloat(altura.value)/100
+    const min = (alturaEmCm*alturaEmCm)*18.5
+    const max = (alturaEmCm*alturaEmCm)*24.9
+    const pesoIdeal = `O seu peso ideal está entre ${min} e ${max}`
+    contentPesoIdeal.innerHTML=pesoIdeal
+}
+
 function mudaCorTabela(imc){
     const rowsTable = document.getElementById("tbodyTabela").children
     for(let i=0; i<rowsTable.length; i++){
