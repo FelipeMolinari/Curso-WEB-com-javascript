@@ -5,7 +5,73 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div{
+            padding: 30px;
+            border: black 5px solid;
+            font-size: 60ox;
+            color: floralwhite;
+            margin: 8px;
+        }
+
+        /*Static: elemento não sofre alteração de posição mesmo quando atributo (left top)é adicionado */
+        .static{
+            position: static;
+            left: 50px;
+            top: 40px;
+            background-color: blue;
+        }
+        /* Elemento fica fixado na posição indicada pelo bottom e right */
+        .fixed{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: coral;
+        }
+        /* Elemento fica alinhado com o anterior a ele */
+        .relative1{
+            position: relative;
+            top: 20px;
+            background-color: crimson;
+        }
+        /* Elemento fica alinhado de forma absoluta na pagina */
+        .absolute1{
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            background-color: darkkhaki;
+
+        }
+        *{
+            margin: 0px;
+        }
+
+        .relative2{
+            position: relative;
+            left: 20px;
+            top: 300px;
+            width: 80px;
+            height: 100px;
+            background-color: darkolivegreen;
+        }
+
+        /* ELemento absolute dentro de um elemento relativo, ele é absoluto dentro do elemento pai */
+        .absolute2{
+            position: absolute;
+            top: 0;
+            background-color: darkturquoise;
+        }
+
+        /* Elemento nunca some da pagina */
+        .sticky{
+            position: sticky;
+            margin: 0px;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            /* position: -webkit-sticky Apenas para o safari */
+            background-color: lightgreen;
+        }
+
     </style>
 </head>
 
