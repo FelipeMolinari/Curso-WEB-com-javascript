@@ -10,6 +10,7 @@
             margin: 20px;
             height: calc(100% - 40px);
             background-color: lightgray;
+
         }
         
         div {
@@ -19,6 +20,20 @@
             font-size: 30px;
             border: solid 5px dodgerblue;
             background: #fff;
+        }
+        body{
+            display: grid;
+            grid-template-columns: [inicio1] 1fr [meio1 meio2] 1fr [fim1] 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+
+        .d1{
+            grid-column-start: meio1;
+            grid-column-end: fim;
+            /* row-start column-start row-end column-end */
+            grid-area: 1/ meio1/ span3 / fim;
         }
     </style>
 </head>
