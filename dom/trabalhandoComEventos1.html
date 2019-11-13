@@ -9,9 +9,25 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a wait-to-navigate=5 href="https://google.com.br">Google</a>
+    </div>
+    <div>
+        <a wait-to-navigate=2 href="https://ufop.br">Ufop</a>
     </div>
     <script>
-        // ...
+        const a = document.querySelectorAll('[wait-to-navigate]')
+        a.forEach(element=>{
+            element.onclick = navegarEm(element.getAttribute("[wait-to-navigate]"))
+        })
+
+        function navegarEm(e, tempo){
+            e.preventDefault()
+            console.log(e.element)
+            console.log(`Navengando em ${tempo}`)
+            setTimeout(()=>{
+                window.location.href = e.target.href
+            }, 5000)
+        }
     </script>
+    <!-- Resolverr -->
 </body>
